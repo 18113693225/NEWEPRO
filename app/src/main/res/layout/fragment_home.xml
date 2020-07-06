@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <ImageView
+        android:id="@+id/parallax"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/home_top"
+        app:layout_collapseMode="parallax" />
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnablePreviewInEditMode="false">
+
+        <com.scwang.smart.refresh.header.ClassicsHeader
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="160dp"
+                    android:layout_marginEnd="10dp"
+                    app:cardBackgroundColor="@color/color_white"
+                    app:cardCornerRadius="8dp"
+                    app:cardUseCompatPadding="true">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/pageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/shape_bg_white">
+
+                    <ImageView
+                        android:id="@+id/img1"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/ic_app" />
+
+
+                    <TextView
+                        android:id="@+id/text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_toEndOf="@id/img1"
+                        android:text="公司\n动态"
+                        android:textColor="@color/color_black"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@id/text1"
+                        android:text="暂时写一个死值" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/shape_bg_white">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
+                        android:text="Binzhou Medical University is a common medical university at provincial level in Shandong Province，and its predecessor was the Public Medical School of Shandong University originally established in 1946. The university follows its school-running tradition that “teaching comes first, and quality is prior to any others” and that “the education of man is a fundamental, and moral education has the priority”, and puts into practices its university dictum of “benevolent mind and wonderful skills”. Sticking to the centeredness on the cultivation of talents and that...
+Binzhou Medical University is a common medical university at provincial level in Shandong Province，and its predecessor was the Public Medical School of Shandong University originally established in 1946. The university follows its school-running tradition that “teaching comes first, and quality is prior to any others” and that “the education of man is a fundamental, and moral education has the priority”, and puts into practices its university dictum of “benevolent mind and wonderful skills”. Sticking to the centeredness on the cultivation of talents and that...
+Binzhou Medical University is a common medical university at provincial level in Shandong Province，and its predecessor was the Public Medical School of Shandong University originally established in 1946. The university follows its school-running tradition that “teaching comes first, and quality is prior to any others” and that “the education of man is a fundamental, and moral education has the priority”, and puts into practices its university dictum of “benevolent mind and wonderful skills”. Sticking to the centeredness on the cultivation of talents and that..." />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <com.scwang.smart.refresh.footer.ClassicsFooter
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/AppTheme.Toolbar"
+        android:layout_marginBottom="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_collapseMode="pin"
+        app:navigationIcon="@mipmap/ic_sao">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:visibility="invisible" />
+
+    </androidx.appcompat.widget.Toolbar>
+</FrameLayout>

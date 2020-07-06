@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1491f0</color>
+    <color name="colorPrimaryDark">#1491f0</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="color_gray">#9a9a9a</color>
+
+    <!--揭露动画填充颜色-->
+    <color name="color_anim">#CCFFFFFF</color>
+
+    <!--导航栏-->
+    <color name="custom_actionBar">#1491f0</color>
+    <!--details_text_color-->
+    <color name="details_text_color_left">#424954</color>
+    <color name="details_text_color_right">#333333</color>
+    <!--details_line_color-->
+    <color name="details_line_color_fine">#e3e3e3</color>
+    <color name="details_line_color_coarse">#e3e3e3</color>
+
+    <!-- white -->
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_black">#000000</color>
+
+    <!-- title 半透明背景颜色 -->
+    <color name="color_title_bg">#CCFFFFFF</color>
+    <!-- title 透明背景颜色 -->
+    <color name="color_translucent">#00000000</color>
+    <!-- 默认背景色 -->
+    <color name="backgroundColor">#EEEEEE</color>
+    <color name="txt_color">#48495F</color>
+    <color name="cutePink">#f43a68</color>
+    <color name="hard_color">#48495f</color>
+
+    <!--详情单底部FAB按钮颜色-->
+    <color name="details_fab_color_update_normal">#00E5EE</color>
+    <color name="details_fab_color_update_press">#00FFFF</color>
+
+    <color name="details_fab_color_ask_normal">#FFD700</color>
+    <color name="details_fab_color_ask_press">#FFFF00</color>
+
+    <color name="details_fab_color_no_pass_normal">#EE0000</color>
+    <color name="details_fab_color_no_pass_press">#EE2C2C</color>
+
+    <color name="details_fab_color_pass_normal">#00CD00</color>
+    <color name="details_fab_color_pass_press">#00FF00</color>
+
+    <color name="details_fab_color_freeze_normal">#EE0000</color>
+    <color name="details_fab_color_freeze_press">#EE2C2C</color>
+
+    <color name="details_fab_color_thaw_normal">#00CD00</color>
+    <color name="details_fab_color_thaw_press">#00FF00</color>
+
+    <color name="details_fab_color_back_normal">#EE0000</color>
+    <color name="details_fab_color_back_press">#EE2C2C</color>
+
+    <color name="details_fab_color_replay_normal">#00CD00</color>
+    <color name="details_fab_color_replay_press">#00FF00</color>
+
+</resources>

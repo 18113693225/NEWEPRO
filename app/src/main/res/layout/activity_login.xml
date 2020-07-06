@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bg_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_login_gif" />
+
+
+    <!--    <com.app.android.epro.epro.view.LoginVideoView-->
+    <!--        android:id="@+id/video"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent" />-->
+
+    <RelativeLayout
+        android:id="@+id/content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="50dp">
+
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:lines="1"
+                android:padding="1dp"
+                android:textColor="@color/color_white"
+                android:text="@string/phone_number"
+                android:textSize="16sp" />
+
+
+            <EditText
+                android:id="@+id/phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@+id/textView1"
+                android:ems="19"
+                android:hint="@string/please_input_phone_number"
+                android:inputType="phone"
+                android:textColor="@color/color_white"
+                android:maxLength="11"
+                android:padding="1dp"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/relativeLayout1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="50dp">
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="1dp"
+                android:textColor="@color/color_white"
+                android:text="@string/password"
+                android:textSize="16sp" />
+
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@+id/textView2"
+                android:ems="19"
+                android:textColor="@color/color_white"
+                android:hint="@string/please_input_password"
+                android:inputType="textPassword"
+                android:padding="1dp"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+
+
+        <FrameLayout
+            android:id="@+id/loginButton_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/relativeLayout2"
+            android:layout_alignStart="@+id/relativeLayout2"
+            android:layout_alignEnd="@+id/relativeLayout2"
+            android:layout_marginTop="20dp"
+            android:padding="1dp">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/cutePink"
+                android:text="@string/login"
+                android:textColor="@color/color_white"
+                android:textSize="20sp" />
+        </FrameLayout>
+
+
+        <!--        <com.app.android.epro.epro.view.NbButton-->
+        <!--            android:id="@+id/loginButton"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_below="@+id/relativeLayout2"-->
+        <!--            android:layout_alignStart="@+id/relativeLayout2"-->
+        <!--            android:layout_alignEnd="@+id/relativeLayout2"-->
+        <!--            android:layout_marginTop="20dp"-->
+        <!--            android:padding="1dp"-->
+        <!--            android:text="@string/login"-->
+        <!--            android:textColor="@color/color_white"-->
+        <!--            android:textSize="20sp" />-->
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/loginButton_layout"
+            android:layout_alignStart="@+id/relativeLayout2"
+            android:layout_alignEnd="@+id/relativeLayout2"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/forgetPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/color_white"
+                android:text="@string/reset_message"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:id="@+id/activation_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                android:textColor="@color/color_white"
+                android:text="@string/ApprovalManage"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</FrameLayout>
+
+

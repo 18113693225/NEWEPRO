@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">智慧菲迪克</string>
+
+
+    <string name="log">菲迪克智慧企业管理平台，让世界触手可及！</string>
+    <string name="home">首页</string>
+
+    <string name="phone_number">手机号</string>
+    <string name="please_input_phone_number">请输入手机号</string>
+    <string name="password">密码</string>
+    <string name="please_input_password">请输入密码</string>
+    <string name="code">验证码</string>
+    <string name="please_input_code">请输入验证码</string>
+    <string name="please_input_password_again">请再次输入密码</string>
+    <string name="login">登录</string>
+    <string name="forget_password">忘记密码?</string>
+    <string name="reset_message">重置信息(密码/手机)</string>
+    <string name="account_activation">账号激活</string>
+    <string name="ApprovalManage">审批管理</string>
+    <string name="search_list_you_want">搜索你想要的单子</string>
+
+    <string name="To_be_reviewed">待审核</string>
+    <string name="Under_review">审核中</string>
+    <string name="Approved">已审批</string>
+    <string name="Fail">未通过</string>
+    <string name="Back">退回</string>
+    <string name="frozen">冻结</string>
+
+    <string name="reminder">温馨提示</string>
+    <string name="data_request">数据请求中，请稍后。。。</string>
+
+    <string name="approval_opinions">审批意见</string>
+    <string name="input_approval_opinions">请输入内容</string>
+    <string name="select_next_reviewer">选择下一步审核人</string>
+
+    <string name="ask">询问</string>
+    <string name="input_ask_opinions">请输入询问信息</string>
+
+
+    <string name="preservation">保存</string>
+    <string name="cancel">取消</string>
+    <string name="delete">删除</string>
+
+
+    <string name="loading">正在加载中...</string>
+    <string name="empty_network_error">加载失败，请刷新</string>
+    <string name="empty_no_data">没有更多数据, 请刷新</string>
+
+    <string name="process_audit">流程审核</string>
+    <string name="click_for_choice">点击选择</string>
+    <string name="commit">提交</string>
+
+    <string name="car_apply">车辆维修/保养申请</string>
+    <string name="car_use">用车申请</string>
+
+    <string name="please_input_approval_content">请输入审批内容</string>
+    <string name="please_select_the_next_reviewer">请选择下一步审核人</string>
+
+    <string name="number">编号</string>
+    <string name="Initiating_post">发起岗位:</string>
+    <string name="Unit_name">单位名称:</string>
+    <string name="Department_name">部门名称:</string>
+
+
+</resources>

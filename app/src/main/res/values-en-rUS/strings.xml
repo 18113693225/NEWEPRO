@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EPRO</string>
+
+    <string name="log">FIDIC smart enterprise management platform, accessible to the world!</string>
+    <string name="home">home</string>
+
+    <string name="phone_number">Phone</string>
+    <string name="please_input_phone_number">please enter your mobile number</string>
+    <string name="password">PassWord</string>
+    <string name="please_input_password">please input a password</string>
+    <string name="code">code</string>
+    <string name="please_input_code">please input code</string>
+    <string name="please_input_password_again">please input password again</string>
+    <string name="login">login</string>
+    <string name="forget_password">forget password?</string>
+    <string name="reset_message">Reset(password / phone)</string>
+    <string name="account_activation">Account</string>
+    <string name="ApprovalManage">Approval</string>
+    <string name="search_list_you_want">Search you want</string>
+
+    <string name="To_be_reviewed">ToBeReviewed</string>
+    <string name="Under_review">UnderReview</string>
+    <string name="Approved">Approved</string>
+    <string name="Fail">Fail</string>
+    <string name="Back">Back</string>
+    <string name="frozen">frozen</string>
+
+    <string name="reminder">Reminder</string>
+    <string name="data_request">Data request, please wait...</string>
+
+    <string name="approval_opinions">approval opinions</string>
+    <string name="input_approval_opinions">please input content</string>
+
+    <string name="ask">ask</string>
+    <string name="input_ask_opinions">please input ask</string>
+
+    <string name="preservation">preservation</string>
+    <string name="cancel">cancel</string>
+    <string name="delete">delete</string>
+
+    <string name="loading">Loading...</string>
+    <string name="empty_network_error">Network error, Refreshing</string>
+    <string name="empty_no_data">There is no data, Refreshing</string>
+
+    <string name="process_audit">Process Audit</string>
+    <string name="click_for_choice">click for choice</string>
+    <string name="select_next_reviewer">select next reviewer</string>
+    <string name="commit">commit</string>
+
+    <string name="car_apply">Vehicle repair/maintenance application</string>
+    <string name="car_use">car application</string>
+
+    <string name="please_input_approval_content">please input approval content</string>
+    <string name="please_select_the_next_reviewer">please select the next reviewer</string>
+
+    <string name="number">number</string>
+    <string name="Initiating_post">Initiating post:</string>
+    <string name="Unit_name">Unit name:</string>
+    <string name="Department_name">Department name:</string>
+</resources>

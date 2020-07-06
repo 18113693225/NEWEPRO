@@ -1,0 +1,2 @@
+rootProject.name='NEWEPRO'
+include ':app'
