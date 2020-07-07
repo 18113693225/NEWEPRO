@@ -129,5 +129,14 @@ interface ApiService {
         @Query("menuCode") menuCode: String
     ): Observable<DetailCarUseBean>
 
+    /**
+     * 介绍信/委托书
+     */
+    @GET("app/v1/getApprovalReferenceInfo")
+    fun getIntroductionData(
+        @Query("recordId") recordId: String,
+        @Query("menuCode") menuCode: String
+    ): Observable<DetailIntroductionBean>
+
 
 }

@@ -135,7 +135,7 @@ class InfoBottomFragment : BaseFragment(), ProcessInfoContract.View,
 
             }
             else -> {
-                activity?.let { Toasty.error(it, info.message).show() }
+                activity?.let { CustomUtils.errHandle(data.code, data.message, it) }
             }
         }
     }

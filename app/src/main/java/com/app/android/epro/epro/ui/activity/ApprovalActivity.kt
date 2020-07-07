@@ -91,7 +91,7 @@ class ApprovalActivity : BaseActivity(), ProcessInfoContract.View {
                 }
             }
             else -> {
-                Toasty.error(this, info.message).show()
+                CustomUtils.errHandle(info.code, info.message, this)
             }
         }
     }
@@ -102,10 +102,9 @@ class ApprovalActivity : BaseActivity(), ProcessInfoContract.View {
             0 -> {
                 Toasty.info(this, "success").show()
                 CustomUtils.toProcessManageActivity(this)
-
             }
             else -> {
-                Toasty.error(this, info.message).show()
+                CustomUtils.errHandle(info.code, info.message, this)
             }
         }
 

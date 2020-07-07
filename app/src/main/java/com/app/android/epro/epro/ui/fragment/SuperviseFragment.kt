@@ -10,6 +10,7 @@ import com.app.android.epro.epro.mvp.model.bean.ProcessListBean
 import com.app.android.epro.epro.mvp.presenter.ProcessListPresenter
 import com.app.android.epro.epro.ui.activity.DetailCarRepairActivity
 import com.app.android.epro.epro.ui.activity.DetailCarUseActivity
+import com.app.android.epro.epro.ui.activity.DetailsIntroductionLetterActivity
 import com.app.android.epro.epro.ui.adapter.ProcessListAdapter
 import com.app.android.epro.epro.utils.CustomUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -113,6 +114,10 @@ class SuperviseFragment : BaseFragment(), ProcessListContract.View {
                 DetailCarUseActivity().javaClass,
                 menu, id, jobId
             )
+            "MENU_INTRODUCE_LETTER_ADD" -> toAny(
+                DetailsIntroductionLetterActivity().javaClass,
+                menu, id, jobId
+            )
         }
     }
 
@@ -189,7 +194,7 @@ class SuperviseFragment : BaseFragment(), ProcessListContract.View {
             else -> {
                 mAdapter!!.setList(dateList)
                 mAdapter!!.setEmptyView(R.layout.empty_layout)
-                activity?.let { Toasty.error(it, data.message).show() }
+                activity?.let { CustomUtils.errHandle(data.code, data.message, it) }
             }
         }
 

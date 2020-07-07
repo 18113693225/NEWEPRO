@@ -24,6 +24,9 @@ class ProcessInfoModel {
             "MENU_VEHICLE_APPLICATION_ADD" -> RetrofitManager.service.getDetailCarUseData(
                 recordId, menuCode
             ).compose(SchedulerUtils.ioToMain())
+            "MENU_INTRODUCE_LETTER_ADD" -> RetrofitManager.service.getIntroductionData(
+                recordId, menuCode
+            ).compose(SchedulerUtils.ioToMain())
 
 
             else -> RetrofitManager.service.getDetailCarRepairData(recordId, menuCode)

@@ -13,6 +13,7 @@ import com.app.android.epro.epro.ui.activity.ApprovalActivity
 import com.app.android.epro.epro.ui.activity.LoginActivity
 import com.app.android.epro.epro.ui.activity.ProcessManageActivity
 import com.google.gson.Gson
+import es.dmoral.toasty.Toasty
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
 import org.json.JSONObject
@@ -22,6 +23,15 @@ object CustomUtils {
     private var dialog: MaterialDialog? = null
     const val pageSize: Int = 20
     const val emptyInfo: String = "未填写"
+
+
+    fun errHandle(code: Int, msg: String, activity: Activity) {
+        when (code) {
+            401 -> toLogin(activity)
+            else -> Toasty.error(activity, msg).show()
+        }
+    }
+
 
     fun toBody(map: HashMap<String, String>): RequestBody {
         val jsonObject = JSONObject(map as Map<*, *>)

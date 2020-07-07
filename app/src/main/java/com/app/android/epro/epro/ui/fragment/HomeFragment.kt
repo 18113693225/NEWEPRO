@@ -17,6 +17,7 @@ import com.app.android.epro.epro.mvp.presenter.HomePresenter
 import com.app.android.epro.epro.rx.scheduler.SchedulerUtils
 import com.app.android.epro.epro.ui.activity.ProcessManageActivity
 import com.app.android.epro.epro.ui.adapter.HomeMenuAdapter
+import com.app.android.epro.epro.utils.CustomUtils
 import com.app.android.epro.epro.utils.StatusBarUtil
 import com.scwang.smart.refresh.layout.util.SmartUtil
 import es.dmoral.toasty.Toasty
@@ -121,7 +122,7 @@ class HomeFragment : BaseFragment(), HomeContract.View {
                 mHomeMenuAdapter?.setList(userInfoBean.data.menus)
             }
             else -> {
-                activity?.let { Toasty.error(it, userInfoBean.message).show() }
+                activity?.let { CustomUtils.errHandle(userInfoBean.code, userInfoBean.message, it) }
             }
         }
     }

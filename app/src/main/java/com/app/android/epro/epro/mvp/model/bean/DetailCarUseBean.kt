@@ -34,7 +34,7 @@ data class DetailCarUseBean(
             val createTime: String,
             val orgName: String,
             val createUserPhone: String,
-            val extendData: Any,
+            val extendData: ExtendData,//自定义表单
             val annexItems: List<AnnexItem>//上传图片或附件信息
         )
     }

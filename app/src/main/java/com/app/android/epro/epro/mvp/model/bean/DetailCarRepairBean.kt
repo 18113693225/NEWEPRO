@@ -35,7 +35,8 @@ data class DetailCarRepairBean(
             val allocationState: String,//维修状态（1正常，2维修保养申请中，3维修保养中
             val orgName: String,//公司名称
             val createUserPhone: String,//创建人电话
-            val extendData: Any//扩展数据
+            val extendData: ExtendData,//自定义表单
+            val annexItems: List<AnnexItem>//上传图片或附件信息
         )
     }
 }

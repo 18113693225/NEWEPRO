@@ -1,6 +1,5 @@
 package com.app.android.epro.epro.ui.activity
 
-import android.content.Intent
 import android.view.MenuItem
 import android.widget.EditText
 import com.afollestad.materialdialogs.customview.getCustomView
@@ -146,7 +145,7 @@ class DetailCarUseActivity : BaseDetailActivity(), ProcessInfoContract.View,
                 EventBus.getDefault().post(info.data.dataApproval)
             }
             else -> {
-                Toasty.error(this, info.message).show()
+                CustomUtils.errHandle(info.code, info.message, this)
             }
         }
     }
@@ -159,7 +158,7 @@ class DetailCarUseActivity : BaseDetailActivity(), ProcessInfoContract.View,
                 finishAfterTransition()
             }
             else -> {
-                Toasty.error(this, info.message).show()
+                CustomUtils.errHandle(info.code, info.message, this)
             }
         }
     }

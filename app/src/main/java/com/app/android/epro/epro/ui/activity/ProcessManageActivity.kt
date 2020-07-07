@@ -14,6 +14,7 @@ import com.app.android.epro.epro.mvp.model.bean.ProcessNumBean
 import com.app.android.epro.epro.mvp.model.bean.UserInfoBean
 import com.app.android.epro.epro.mvp.presenter.ProcessInfoPresenter
 import com.app.android.epro.epro.ui.adapter.ProcessManageTabAdapter
+import com.app.android.epro.epro.utils.CustomUtils
 import com.google.android.material.tabs.TabLayout
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.activity_process_manage.*
@@ -153,7 +154,7 @@ class ProcessManageActivity : BaseActivity(), ProcessInfoContract.View {
                 }
             }
             else -> {
-                Toasty.error(this, info.message).show()
+                CustomUtils.errHandle(info.code, info.message, this)
             }
         }
     }
