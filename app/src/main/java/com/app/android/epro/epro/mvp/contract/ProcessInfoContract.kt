@@ -69,6 +69,11 @@ interface ProcessInfoContract {
          */
         fun nextPeople(flowApprovalSheetId: String)
 
+        /**
+         * 消息总和（流程）
+         */
+        fun infoNum()
+
 
     }
 

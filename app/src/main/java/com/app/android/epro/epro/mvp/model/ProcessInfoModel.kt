@@ -33,6 +33,14 @@ class ProcessInfoModel {
 
     }
 
+    /**
+     * 消息总和（流程）
+     */
+
+    fun getInfoNum(): Observable<Any> {
+        return RetrofitManager.service.getInfoNum().compose(SchedulerUtils.ioToMain())
+    }
+
 
     /**
      * 审批（不同意）

@@ -20,6 +20,19 @@ interface ApiService {
     @GET("mobile/login/v1/getuserinfo")
     fun getUserInfoData(): Observable<UserInfoBean>
 
+    /**
+     * 消息总和（流程）
+     */
+    @POST("supervisedView/v1/getViewNumber")
+    fun getInfoNum(): Observable<ProcessNumBean>
+
+    /**
+     * 更新单子查看状态
+     */
+    @GET("supervisedView/v1/updateReadState")
+    fun postRead(@Query("supervisedViewId") supervisedViewId: String):
+            Observable<ProcessBean>
+
 
     /**
      * 审核列表（1待审核2已审核）

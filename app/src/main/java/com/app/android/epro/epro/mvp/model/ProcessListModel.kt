@@ -33,4 +33,13 @@ class ProcessListModel {
     }
 
 
+    /**
+     * 更新单子查看状态
+     */
+
+    fun getReadData(supervisedViewId: String): Observable<Any> {
+        return RetrofitManager.service.postRead(supervisedViewId).compose(SchedulerUtils.ioToMain())
+    }
+
+
 }

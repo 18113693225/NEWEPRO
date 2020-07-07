@@ -162,5 +162,26 @@ class ProcessInfoPresenter : BasePresenter<ProcessInfoContract.View>(),
         addSubscription(disposable)
     }
 
+    override fun infoNum() {
+        checkViewAttached()
+        mRootView?.showLoading()
+
+        val disposable =
+            processInfoModel.getInfoNum()
+                .subscribe({ any ->
+                    mRootView?.apply {
+                        dismissLoading()
+                        setDetailInfoData(any)
+                    }
+                }, { t ->
+                    mRootView?.apply {
+                        dismissLoading()
+                        showError(ExceptionHandle.handleException(t), ExceptionHandle.errorCode)
+                    }
+                })
+
+        addSubscription(disposable)
+    }
+
 
 }

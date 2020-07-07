@@ -22,6 +22,7 @@ data class ProcessListBean(
             val flowState: String,//审核状态（1待审核，2审核中，3已审批，4未通过，5退回）
             val createUserName: String,//创建人
             val createTime: String,//创建时间
+            val supervisedViewId: String,//查看信息id
             val jobId: String //职务id/应审人jobId
         )
     }

@@ -94,6 +94,7 @@ class AskFragment : BaseFragment(), ProcessListContract.View {
         mAdapter!!.setOnItemClickListener { adapter, _, position ->
             val bean = adapter.data[position] as ProcessListBean.Data.ProcessData
             jump(bean, bean.flowMenuCode, bean.flowReferenceId, bean.jobId)
+            mPresenter.readState(bean.supervisedViewId)
         }
 
     }
@@ -190,6 +191,10 @@ class AskFragment : BaseFragment(), ProcessListContract.View {
             }
         }
 
+
+    }
+
+    override fun setDetailBackData(data: Any) {
 
     }
 

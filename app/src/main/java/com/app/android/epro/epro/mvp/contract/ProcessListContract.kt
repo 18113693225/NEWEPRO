@@ -15,6 +15,10 @@ interface ProcessListContract {
          */
         fun setProcessListData(data: ProcessListBean)
 
+        /**
+         * 设置审批信息反馈
+         */
+        fun setDetailBackData(data: Any)
 
         /**
          * 显示错误信息
@@ -37,5 +41,10 @@ interface ProcessListContract {
          * 获取待办列表
          */
         fun requestDetailListData(map: HashMap<String, String>)
+
+        /**
+         * 更新单子查看状态
+         */
+        fun readState(supervisedViewId: String)
     }
 }

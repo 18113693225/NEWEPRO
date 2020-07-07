@@ -198,6 +198,10 @@ class DetailFragment : BaseFragment(), ProcessListContract.View {
 
     }
 
+    override fun setDetailBackData(data: Any) {
+
+    }
+
     override fun showError(msg: String, errorCode: Int) {
         dateList.clear()
         mAdapter!!.setList(dateList)
