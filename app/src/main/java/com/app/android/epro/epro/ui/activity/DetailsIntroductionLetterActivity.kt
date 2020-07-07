@@ -168,6 +168,37 @@ class DetailsIntroductionLetterActivity : BaseDetailActivity(), ProcessInfoContr
         userName.text = info.createUserName
         phone.text = info.createUserPhone
         orgName.text = info.orgName
+        when (info.approvalState) {
+            "1" -> {
+                status_tv.text = resources.getText(R.string.To_be_reviewed)
+                status_tv.setBackgroundResource(R.drawable.shape_bg_approve_wait)
+            }
+            "2" -> {
+                status_tv.text = resources.getText(R.string.Under_review)
+                status_tv.setBackgroundResource(R.drawable.shape_bg_approve_ing)
+            }
+            "3" -> {
+                status_tv.text = resources.getText(R.string.Approved)
+                status_tv.setBackgroundResource(R.drawable.shape_bg_approve_yes)
+            }
+            "4" -> {
+                status_tv.text = resources.getText(R.string.Fail)
+                status_tv.setBackgroundResource(R.drawable.shape_bg_approve_no)
+            }
+            "5" -> {
+                status_tv.text = resources.getText(R.string.Back)
+                status_tv.setBackgroundResource(R.drawable.shape_bg_approve_no)
+            }
+            "6" -> {
+                status_tv.text = resources.getText(R.string.withdraw)
+                status_tv.setBackgroundResource(R.drawable.shape_bg_approve_wait)
+            }
+            "7" -> {
+                status_tv.text = resources.getText(R.string.cancel)
+                status_tv.setBackgroundResource(R.drawable.shape_bg_approve_wait)
+            }
+
+        }
         code.text = info.refenceCode
         jobName.text = info.jobName
         unitName.text = info.unitName

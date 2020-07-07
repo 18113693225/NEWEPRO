@@ -22,7 +22,7 @@ import org.greenrobot.eventbus.EventBus
 
 class ProcessManageActivity : BaseActivity(), ProcessInfoContract.View {
 
-    private lateinit var list: ArrayList<UserInfoBean.Data.Menu.SubMenu>
+    private var list: ArrayList<UserInfoBean.Data.Menu.SubMenu>? = null
     private var mProcessManageTabAdapter: ProcessManageTabAdapter? = null
     private val mPresenter by lazy { ProcessInfoPresenter() }
 
@@ -35,7 +35,7 @@ class ProcessManageActivity : BaseActivity(), ProcessInfoContract.View {
     }
 
     override fun initData() {
-        list = intent.getSerializableExtra("subMenus") as ArrayList<UserInfoBean.Data.Menu.SubMenu>
+        list = intent.getSerializableExtra("subMenus") as ArrayList<UserInfoBean.Data.Menu.SubMenu>?
 
     }
 
@@ -59,15 +59,15 @@ class ProcessManageActivity : BaseActivity(), ProcessInfoContract.View {
 
     private fun setTbaLayout() {
         tabLayout.setupWithViewPager(content_pager)
-        mProcessManageTabAdapter = ProcessManageTabAdapter(list, supportFragmentManager)
+        mProcessManageTabAdapter = list?.let { ProcessManageTabAdapter(it, supportFragmentManager) }
         content_pager.adapter = mProcessManageTabAdapter
-        content_pager.offscreenPageLimit = list.size
+        content_pager.offscreenPageLimit = list?.size ?: 0
 
     }
 
     private fun setTab() {
         tabLayout.removeAllTabs()
-        list.forEach {
+        list?.forEach {
             val tab = tabLayout.newTab()
             val view = LayoutInflater.from(this).inflate(R.layout.tab_view, null)
             val name = view.findViewById<TextView>(R.id.name)

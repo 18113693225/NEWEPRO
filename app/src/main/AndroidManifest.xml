@@ -104,6 +104,17 @@
                 android:value=".ui.activity.ProcessManageActivity" />
         </activity>
 
+        <!--项目立项备案-->
+        <activity
+            android:name=".ui.activity.DetailsProjectInitiationActivity"
+            android:label="@string/project_initiation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.ProcessManageActivity" />
+        </activity>
+
     </application>
 
 </manifest>

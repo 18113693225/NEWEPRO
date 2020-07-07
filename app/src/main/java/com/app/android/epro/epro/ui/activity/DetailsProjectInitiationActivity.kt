@@ -1,28 +1,26 @@
 package com.app.android.epro.epro.ui.activity
 
-
 import android.view.MenuItem
 import android.widget.EditText
 import com.afollestad.materialdialogs.customview.getCustomView
 import com.app.android.epro.epro.R
 import com.app.android.epro.epro.base.BaseDetailActivity
 import com.app.android.epro.epro.mvp.contract.ProcessInfoContract
-import com.app.android.epro.epro.mvp.model.bean.DetailCarRepairBean
+import com.app.android.epro.epro.mvp.model.bean.DetailProjectInitiationBean
 import com.app.android.epro.epro.mvp.model.bean.ProcessBean
 import com.app.android.epro.epro.mvp.model.bean.SendApprovalInfo
 import com.app.android.epro.epro.mvp.presenter.ProcessInfoPresenter
 import com.app.android.epro.epro.ui.fragment.InfoBottomFragment
 import com.app.android.epro.epro.utils.CustomUtils
 import es.dmoral.toasty.Toasty
-import kotlinx.android.synthetic.main.detail_car_repair.*
 import kotlinx.android.synthetic.main.include_detail_bar.*
 import kotlinx.android.synthetic.main.include_detail_top.*
 import org.greenrobot.eventbus.EventBus
 
-class DetailCarRepairActivity : BaseDetailActivity(), ProcessInfoContract.View,
+class DetailsProjectInitiationActivity : BaseDetailActivity(), ProcessInfoContract.View,
     InfoBottomFragment.RefreshActivity {
 
-    private lateinit var info: DetailCarRepairBean
+    private lateinit var info: DetailProjectInitiationBean
     private lateinit var id: String
     private lateinit var menu: String
     private lateinit var jobId: String
@@ -35,7 +33,7 @@ class DetailCarRepairActivity : BaseDetailActivity(), ProcessInfoContract.View,
     }
 
     override fun layoutId(): Int {
-        return R.layout.detail_car_repair
+        return R.layout.detail_project_initiation
     }
 
     override fun initData() {
@@ -139,7 +137,7 @@ class DetailCarRepairActivity : BaseDetailActivity(), ProcessInfoContract.View,
     }
 
     override fun setDetailInfoData(data: Any) {
-        info = data as DetailCarRepairBean
+        info = data as DetailProjectInitiationBean
         when (info.code) {
             0 -> {
                 setView(info.data.`object`)
@@ -165,11 +163,10 @@ class DetailCarRepairActivity : BaseDetailActivity(), ProcessInfoContract.View,
     }
 
 
-    private fun setView(info: DetailCarRepairBean.Data.Object) {
+    private fun setView(info: DetailProjectInitiationBean.Data.Object) {
         userName.text = info.createUserName
         phone.text = info.createUserPhone
         orgName.text = info.orgName
-
         when (info.approvalState) {
             "1" -> {
                 status_tv.text = resources.getText(R.string.To_be_reviewed)
@@ -206,15 +203,7 @@ class DetailCarRepairActivity : BaseDetailActivity(), ProcessInfoContract.View,
         unitName.text = info.unitName
         departmentName.text = info.departmentName
 
-        maintenanceType.text = if (info.maintenanceType == "1") "维修" else "保养"
-        maintenanceUnitName.text = info.maintenanceUnitName
-        maintenanceStartTime.text = info.maintenanceStartTime
-        maintenanceEndTime.text = info.maintenanceEndTime
-        maintenanceVehicleName.text = info.maintenanceVehicleName
-        maintenanceVehicleMileage.text = info.maintenanceVehicleMileage.toString()
 
-        maintenanceReason.text =
-            if (info.maintenanceReason.isEmpty()) CustomUtils.emptyInfo else info.maintenanceReason
     }
 
     override fun showError(msg: String, errorCode: Int) {
@@ -242,6 +231,5 @@ class DetailCarRepairActivity : BaseDetailActivity(), ProcessInfoContract.View,
     override fun renovate() {
         mPresenter.requestDetailInfoData(id, menu)
     }
-
 
 }

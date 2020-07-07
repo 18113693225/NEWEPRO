@@ -29,7 +29,7 @@ data class DetailCarRepairBean(
             val maintenanceUnitName: String,//维修保养单位
             val maintenanceReason: String,//备注
             val approvalId: String,//审核单ID
-            val approvalState: String,//审核状态（0默认状态，1待审核，2审核中，3已审批，4未通过，5退回，6已撤回）
+            val approvalState: String,//审核状态（0默认状态，1待审核，2审核中，3已审批，4未通过，5退回，6已撤回，7已取消）
             val createUserName: String,//创建人
             val createTime: String,//创建时间
             val allocationState: String,//维修状态（1正常，2维修保养申请中，3维修保养中

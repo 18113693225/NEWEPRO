@@ -25,6 +25,8 @@
     <string name="Fail">Fail</string>
     <string name="Back">Back</string>
     <string name="frozen">frozen</string>
+    <string name="withdraw">withdraw</string>
+
 
     <string name="reminder">Reminder</string>
     <string name="data_request">Data request, please wait...</string>
@@ -51,6 +53,8 @@
     <string name="car_apply">Vehicle repair/maintenance application</string>
     <string name="car_use">car application</string>
     <string name="letter_of_introduction">Letter of introduction/power of attorney</string>
+    <string name="project_initiation">Project initiation and filing</string>
+
 
     <string name="please_input_approval_content">please input approval content</string>
     <string name="please_select_the_next_reviewer">please select the next reviewer</string>

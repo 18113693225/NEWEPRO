@@ -9,9 +9,7 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.afollestad.materialdialogs.customview.getCustomView
 import com.app.android.epro.epro.R
-import com.app.android.epro.epro.ui.activity.ApprovalActivity
-import com.app.android.epro.epro.ui.activity.LoginActivity
-import com.app.android.epro.epro.ui.activity.ProcessManageActivity
+import com.app.android.epro.epro.ui.activity.*
 import com.google.gson.Gson
 import es.dmoral.toasty.Toasty
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -28,8 +26,55 @@ object CustomUtils {
     fun errHandle(code: Int, msg: String, activity: Activity) {
         when (code) {
             401 -> toLogin(activity)
-            else -> Toasty.error(activity, msg).show()
+            else ->
+                Toasty.error(activity, msg).show()
         }
+    }
+
+
+    fun jump(
+        activity: Activity,
+        menu: String, id: String, jobId: String, from: String
+    ) {
+        when (menu) {
+            "MENU_VEHICLE_MAINTENANCE_ADD" -> toAny(
+                activity,
+                DetailCarRepairActivity().javaClass,
+                menu, id, jobId, from
+            )
+            "MENU_VEHICLE_APPLICATION_ADD" -> toAny(
+                activity,
+                DetailCarUseActivity().javaClass,
+                menu, id, jobId, from
+            )
+            "MENU_INTRODUCE_LETTER_ADD" -> toAny(
+                activity,
+                DetailsIntroductionLetterActivity().javaClass,
+                menu, id, jobId, from
+            )
+            "MENU_BUSINESS_ADD" -> toAny(
+                activity,
+                DetailsProjectInitiationActivity().javaClass,
+                menu, id, jobId, from
+            )
+
+        }
+    }
+
+
+    private fun toAny(
+        activity: Activity, cls: Class<Any>,
+        menu: String, id: String,
+        jobId: String, from: String
+    ) {
+        val intent = Intent(activity, cls)
+        intent.putExtra("menu", menu)
+        intent.putExtra("id", id)
+        intent.putExtra("jobId", jobId)
+        intent.putExtra("from", from)
+        activity.startActivity(intent)
+        activity.overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out)
+
     }
 
 

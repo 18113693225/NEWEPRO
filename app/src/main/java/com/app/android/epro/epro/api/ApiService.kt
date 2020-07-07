@@ -138,5 +138,14 @@ interface ApiService {
         @Query("menuCode") menuCode: String
     ): Observable<DetailIntroductionBean>
 
+    /**
+     * 项目立项备案
+     */
+    @GET("app/v1/getApprovalReferenceInfo")
+    fun getProjectInitiationData(
+        @Query("recordId") recordId: String,
+        @Query("menuCode") menuCode: String
+    ): Observable<DetailProjectInitiationBean>
+
 
 }

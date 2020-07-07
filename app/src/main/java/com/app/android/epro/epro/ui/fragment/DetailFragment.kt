@@ -95,45 +95,22 @@ class DetailFragment : BaseFragment(), ProcessListContract.View {
 
         mAdapter!!.setOnItemClickListener { adapter, _, position ->
             val bean = adapter.data[position] as ProcessListBean.Data.ProcessData
-            jump(bean, bean.flowMenuCode, bean.flowReferenceId, bean.jobId)
+            if (params["approvelState"].equals("1")) {
+                activity?.let {
+                    CustomUtils.jump(
+                        it, bean.flowMenuCode, bean.flowReferenceId,
+                        bean.jobId, "2"
+                    )
+                }
+            } else {
+                activity?.let {
+                    CustomUtils.jump(
+                        it, bean.flowMenuCode, bean.flowReferenceId,
+                        bean.jobId, "-1"
+                    )
+                }
+            }
         }
-
-    }
-
-    private fun jump(
-        bean: ProcessListBean.Data.ProcessData,
-        menu: String, id: String, jobId: String
-    ) {
-        when (bean.flowMenuCode) {
-            "MENU_VEHICLE_MAINTENANCE_ADD" -> toAny(
-                DetailCarRepairActivity().javaClass,
-                menu, id, jobId
-            )
-            "MENU_VEHICLE_APPLICATION_ADD" -> toAny(
-                DetailCarUseActivity().javaClass,
-                menu, id, jobId
-            )
-            "MENU_INTRODUCE_LETTER_ADD" -> toAny(
-                DetailsIntroductionLetterActivity().javaClass,
-                menu, id, jobId
-            )
-        }
-    }
-
-
-    private fun toAny(cls: Class<Any>, menu: String, id: String, jobId: String) {
-        val intent = Intent(context, cls)
-        intent.putExtra("menu", menu)
-        intent.putExtra("id", id)
-        intent.putExtra("jobId", jobId)
-        if (params["approvelState"].equals("1")) {
-            intent.putExtra("from", "2")
-        } else {
-            intent.putExtra("from", "-1")
-        }
-
-        startActivity(intent)
-        activity?.overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out)
 
     }
 
