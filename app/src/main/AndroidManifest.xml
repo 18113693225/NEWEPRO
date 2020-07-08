@@ -95,7 +95,7 @@
 
         <!--介绍信/委托书-->
         <activity
-            android:name=".ui.activity.DetailsIntroductionLetterActivity"
+            android:name=".ui.activity.DetailIntroductionLetterActivity"
             android:label="@string/letter_of_introduction"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
@@ -106,7 +106,7 @@
 
         <!--项目立项备案-->
         <activity
-            android:name=".ui.activity.DetailsProjectInitiationActivity"
+            android:name=".ui.activity.DetailProjectInitiationActivity"
             android:label="@string/project_initiation"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
@@ -117,8 +117,19 @@
 
         <!--项目立项备案变更-->
         <activity
-            android:name=".ui.activity.DetailsProjectInitiationChangeActivity"
+            android:name=".ui.activity.DetailProjectInitiationChangeActivity"
             android:label="@string/project_initiation_change"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.ProcessManageActivity" />
+        </activity>
+
+        <!--销售开票申请-->
+        <activity
+            android:name=".ui.activity.DetailsSaleInvoiceActivity"
+            android:label="@string/sales_invoice_application"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <meta-data

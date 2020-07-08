@@ -1,5 +1,6 @@
 package com.app.android.epro.epro.ui.activity
 
+
 import android.annotation.SuppressLint
 import android.view.MenuItem
 import android.widget.EditText
@@ -23,7 +24,7 @@ import kotlinx.android.synthetic.main.include_detail_bar.*
 import kotlinx.android.synthetic.main.include_detail_top.*
 import org.greenrobot.eventbus.EventBus
 
-class DetailsProjectInitiationActivity : BaseDetailActivity(), ProcessInfoContract.View,
+class DetailProjectInitiationChangeActivity : BaseDetailActivity(), ProcessInfoContract.View,
     InfoBottomFragment.RefreshActivity {
 
     private lateinit var info: DetailProjectInitiationBean
@@ -322,5 +323,4 @@ class DetailsProjectInitiationActivity : BaseDetailActivity(), ProcessInfoContra
     override fun renovate() {
         mPresenter.requestDetailInfoData(id, menu)
     }
-
 }

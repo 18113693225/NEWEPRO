@@ -156,5 +156,14 @@ interface ApiService {
         @Query("menuCode") menuCode: String
     ): Observable<DetailProjectInitiationBean>
 
+    /**
+     * 销售开票申请
+     */
+    @GET("app/v1/getApprovalReferenceInfo")
+    fun getSalesInvoiceData(
+        @Query("recordId") recordId: String,
+        @Query("menuCode") menuCode: String
+    ): Observable<DetailSalesInvoiceBean>
+
 
 }

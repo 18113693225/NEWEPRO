@@ -4,10 +4,7 @@ package com.app.android.epro.epro.utils
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.widget.EditText
 import com.afollestad.materialdialogs.MaterialDialog
-import com.afollestad.materialdialogs.customview.customView
-import com.afollestad.materialdialogs.customview.getCustomView
 import com.app.android.epro.epro.R
 import com.app.android.epro.epro.ui.activity.*
 import com.google.gson.Gson
@@ -49,17 +46,22 @@ object CustomUtils {
             )
             "MENU_INTRODUCE_LETTER_ADD" -> toAny(
                 activity,
-                DetailsIntroductionLetterActivity().javaClass,
+                DetailIntroductionLetterActivity().javaClass,
                 menu, id, jobId, from
             )
             "MENU_BUSINESS_ADD" -> toAny(
                 activity,
-                DetailsProjectInitiationActivity().javaClass,
+                DetailProjectInitiationActivity().javaClass,
                 menu, id, jobId, from
             )
             "MENU_BUSINESS_UPD" -> toAny(
                 activity,
-                DetailsProjectInitiationChangeActivity().javaClass,
+                DetailProjectInitiationChangeActivity().javaClass,
+                menu, id, jobId, from
+            )
+            "MENU_APPLICATION_FORM_ADD" -> toAny(
+                activity,
+                DetailsSaleInvoiceActivity().javaClass,
                 menu, id, jobId, from
             )
 

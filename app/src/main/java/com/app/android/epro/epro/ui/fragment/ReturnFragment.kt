@@ -1,23 +1,15 @@
 package com.app.android.epro.epro.ui.fragment
 
-import android.content.Intent
-import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.android.epro.epro.R
 import com.app.android.epro.epro.base.BaseFragment
 import com.app.android.epro.epro.mvp.contract.ProcessListContract
 import com.app.android.epro.epro.mvp.model.bean.ProcessListBean
 import com.app.android.epro.epro.mvp.presenter.ProcessListPresenter
-import com.app.android.epro.epro.ui.activity.DetailCarRepairActivity
-import com.app.android.epro.epro.ui.activity.DetailCarUseActivity
-import com.app.android.epro.epro.ui.activity.DetailsIntroductionLetterActivity
 import com.app.android.epro.epro.ui.adapter.ProcessListAdapter
 import com.app.android.epro.epro.utils.CustomUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
 import es.dmoral.toasty.Toasty
-import kotlinx.android.synthetic.main.fragment_approve.*
-import kotlinx.android.synthetic.main.fragment_ask.*
-import kotlinx.android.synthetic.main.fragment_return.*
 import kotlinx.android.synthetic.main.fragment_return.content_list
 import kotlinx.android.synthetic.main.fragment_return.refreshLayout
 import kotlinx.android.synthetic.main.fragment_return.text1
@@ -25,7 +17,6 @@ import kotlinx.android.synthetic.main.fragment_return.text2
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
-import top.wefor.circularanim.CircularAnim
 
 class ReturnFragment : BaseFragment(), ProcessListContract.View {
     private val mPresenter by lazy { ProcessListPresenter() }

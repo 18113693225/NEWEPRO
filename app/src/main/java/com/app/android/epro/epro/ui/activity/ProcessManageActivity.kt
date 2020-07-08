@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
 import com.app.android.epro.epro.R
 import com.app.android.epro.epro.base.BaseActivity
@@ -131,24 +132,40 @@ class ProcessManageActivity : BaseActivity(), ProcessInfoContract.View {
                     val num = it.customView?.findViewById<TextView>(R.id.num)
                     when (it.tag) {
                         "1" -> {
-                            if (info.data.statementsNum > 0 && num != null)
+                            if (info.data.statementsNum > 0 && num != null) {
+                                num.isVisible = true
                                 num.text = info.data.statementsNum.toString()
+                            }
+
+
                         }
                         "2" -> {
-                            if (info.data.waitNum > 0 && num != null)
+                            if (info.data.waitNum > 0 && num != null) {
+                                num.isVisible = true
                                 num.text = info.data.waitNum.toString()
+                            }
+
                         }
                         "3" -> {
-                            if (info.data.backNum > 0 && num != null)
+                            if (info.data.backNum > 0 && num != null) {
+                                num.isVisible = true
                                 num.text = info.data.backNum.toString()
+                            }
+
                         }
                         "4" -> {
-                            if (info.data.supervidsedNum > 0 && num != null)
+                            if (info.data.supervidsedNum > 0 && num != null) {
+                                num.isVisible = true
                                 num.text = info.data.supervidsedNum.toString()
+                            }
+
                         }
                         "6" -> {
-                            if (info.data.askNum > 0 && num != null)
+                            if (info.data.askNum > 0 && num != null) {
+                                num.isVisible = true
                                 num.text = info.data.askNum.toString()
+                            }
+
                         }
                     }
                 }

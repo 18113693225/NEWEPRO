@@ -1,31 +1,39 @@
 package com.app.android.epro.epro.ui.activity
 
+import android.annotation.SuppressLint
 import android.view.MenuItem
 import android.widget.EditText
+import androidx.core.view.isVisible
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.afollestad.materialdialogs.customview.getCustomView
 import com.app.android.epro.epro.R
 import com.app.android.epro.epro.base.BaseDetailActivity
 import com.app.android.epro.epro.mvp.contract.ProcessInfoContract
-import com.app.android.epro.epro.mvp.model.bean.DetailIntroductionBean
+import com.app.android.epro.epro.mvp.model.bean.DetailSalesInvoiceBean
 import com.app.android.epro.epro.mvp.model.bean.ProcessBean
 import com.app.android.epro.epro.mvp.model.bean.SendApprovalInfo
 import com.app.android.epro.epro.mvp.presenter.ProcessInfoPresenter
+import com.app.android.epro.epro.ui.adapter.DetailsProjectInitiationAdapter
 import com.app.android.epro.epro.ui.fragment.InfoBottomFragment
 import com.app.android.epro.epro.utils.CustomUtils
+import com.chad.library.adapter.base.BaseQuickAdapter
 import es.dmoral.toasty.Toasty
-import kotlinx.android.synthetic.main.detail_introduction_letter.*
+import kotlinx.android.synthetic.main.detail_project_initiation.*
+import kotlinx.android.synthetic.main.detail_project_initiation.list
+import kotlinx.android.synthetic.main.detail_sales_invoice.*
 import kotlinx.android.synthetic.main.include_detail_bar.*
 import kotlinx.android.synthetic.main.include_detail_top.*
 import org.greenrobot.eventbus.EventBus
 
-class DetailsIntroductionLetterActivity : BaseDetailActivity(), ProcessInfoContract.View,
+class DetailsSaleInvoiceActivity : BaseDetailActivity(), ProcessInfoContract.View,
     InfoBottomFragment.RefreshActivity {
 
-    private lateinit var info: DetailIntroductionBean
+    private lateinit var info: DetailSalesInvoiceBean
     private lateinit var id: String
     private lateinit var menu: String
     private lateinit var jobId: String
     private var from: String = "-1"
+    private var mAdapter: DetailsProjectInitiationAdapter? = null
     private val mPresenter by lazy { ProcessInfoPresenter() }
 
 
@@ -34,7 +42,7 @@ class DetailsIntroductionLetterActivity : BaseDetailActivity(), ProcessInfoContr
     }
 
     override fun layoutId(): Int {
-        return R.layout.detail_introduction_letter
+        return R.layout.detail_sales_invoice
     }
 
     override fun initData() {
@@ -47,6 +55,7 @@ class DetailsIntroductionLetterActivity : BaseDetailActivity(), ProcessInfoContr
     }
 
     override fun initView() {
+        setRecyclerView()
         action_update.setOnClickListener {
             mPresenter.requestDetailInfoData(id, menu)
         }
@@ -86,6 +95,19 @@ class DetailsIntroductionLetterActivity : BaseDetailActivity(), ProcessInfoContr
             dialogStr(2)
         }
 
+
+    }
+
+    private fun setRecyclerView() {
+
+        val linearLayoutManager1: LinearLayoutManager = object : LinearLayoutManager(this) {
+            override fun canScrollVertically(): Boolean {
+                return false
+            }
+        }
+        list!!.isFocusable = false
+        list!!.setHasFixedSize(true)
+        list!!.layoutManager = linearLayoutManager1
 
     }
 
@@ -138,7 +160,7 @@ class DetailsIntroductionLetterActivity : BaseDetailActivity(), ProcessInfoContr
     }
 
     override fun setDetailInfoData(data: Any) {
-        info = data as DetailIntroductionBean
+        info = data as DetailSalesInvoiceBean
         when (info.code) {
             0 -> {
                 setView(info.data.`object`)
@@ -164,7 +186,8 @@ class DetailsIntroductionLetterActivity : BaseDetailActivity(), ProcessInfoContr
     }
 
 
-    private fun setView(info: DetailIntroductionBean.Data.Object) {
+    @SuppressLint("SetTextI18n")
+    private fun setView(info: DetailSalesInvoiceBean.Data.Object) {
         userName.text = info.createUserName
         phone.text = info.createUserPhone
         orgName.text = info.orgName
@@ -204,16 +227,46 @@ class DetailsIntroductionLetterActivity : BaseDetailActivity(), ProcessInfoContr
         unitName.text = info.unitName
         departmentName.text = info.departmentName
 
-        mandataryUserName.text = info.mandataryUserName
-        introduceProjectName.text = info.introduceProjectName
-        mandataryIdCard.text = info.mandataryIdCard
-        mandataryUnitName.text = info.mandataryUnitName
-        mandataryDepartmentName.text = info.mandataryDepartmentName
-        introduceLetterType.text = info.introduceLetterType
-        introduceStartTime.text = info.introduceStartTime
-        introduceValidDay.text = info.introduceValidDay.toString()
-        customerUnitName.text = info.customerUnitName
-        introduceContent.text = info.introduceContent
+
+        applicationContractName.text = info.applicationContractName
+        applicationContractMoney.text = info.applicationContractMoney.toString()
+        applicationHaveMoney.text = info.applicationHaveMoney.toString()
+        applicationHaveInvoiced.text = info.applicationHaveInvoiced.toString()
+        applicationSurplusInvoiced.text = info.applicationSurplusInvoiced.toString()
+        applicationUserName.text = info.applicationUserName
+        applicationSendType.text = when (info.applicationSendType) {
+            "1" -> "快递"
+            "2" -> "领票人送票"
+            "3" -> "对方上门取票"
+            else -> CustomUtils.emptyInfo
+        }
+        applicationInvoiceType.text =
+            if (info.applicationInvoiceType == "1") "增值税专用发票" else "增值税普通发票"
+
+
+        applicationSendAdress.text =
+            if (info.applicationSendAdress.isEmpty()) CustomUtils.emptyInfo else info.applicationSendAdress
+
+        applicationNotice.text =
+            if (info.applicationNotice.isEmpty()) CustomUtils.emptyInfo else info.applicationNotice
+
+        applicationBuyName.text = info.applicationBuyName
+        applicationBuyTax.text = info.applicationBuyTax
+        applicationBuyBank.text = info.applicationBuyBank
+        applicationBuyAddress.text = info.applicationBuyAddress
+
+        applicationSaleName.text =
+            if (info.applicationSaleName.isEmpty()) CustomUtils.emptyInfo else info.applicationSaleName
+
+        applicationSaleTax.text =
+            if (info.applicationSaleTax.isEmpty()) CustomUtils.emptyInfo else info.applicationSaleTax
+
+        applicationSaleBank.text =
+            if (info.applicationSaleBank.isEmpty()) CustomUtils.emptyInfo else info.applicationSaleBank
+
+        applicationSaleAddress.text =
+            if (info.applicationSaleAddress.isEmpty()) CustomUtils.emptyInfo else info.applicationSaleAddress
+
 
     }
 
@@ -242,5 +295,6 @@ class DetailsIntroductionLetterActivity : BaseDetailActivity(), ProcessInfoContr
     override fun renovate() {
         mPresenter.requestDetailInfoData(id, menu)
     }
+
 
 }
