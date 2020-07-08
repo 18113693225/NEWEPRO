@@ -57,6 +57,11 @@ object CustomUtils {
                 DetailsProjectInitiationActivity().javaClass,
                 menu, id, jobId, from
             )
+            "MENU_BUSINESS_UPD" -> toAny(
+                activity,
+                DetailsProjectInitiationChangeActivity().javaClass,
+                menu, id, jobId, from
+            )
 
         }
     }

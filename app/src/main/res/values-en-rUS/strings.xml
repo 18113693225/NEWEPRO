@@ -54,7 +54,7 @@
     <string name="car_use">car application</string>
     <string name="letter_of_introduction">Letter of introduction/power of attorney</string>
     <string name="project_initiation">Project initiation and filing</string>
-
+    <string name="project_initiation_change">Project initiation and filing change</string>
 
     <string name="please_input_approval_content">please input approval content</string>
     <string name="please_select_the_next_reviewer">please select the next reviewer</string>

@@ -30,6 +30,9 @@ class ProcessInfoModel {
             "MENU_BUSINESS_ADD" -> RetrofitManager.service.getProjectInitiationData(
                 recordId, menuCode
             ).compose(SchedulerUtils.ioToMain())
+            "MENU_BUSINESS_UPD" -> RetrofitManager.service.getProjectInitiationChangeData(
+                recordId, menuCode
+            ).compose(SchedulerUtils.ioToMain())
 
 
             else -> RetrofitManager.service.getDetailCarRepairData(recordId, menuCode)

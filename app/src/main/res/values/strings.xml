@@ -56,6 +56,7 @@
     <string name="car_use">用车申请</string>
     <string name="letter_of_introduction">介绍信/委托书</string>
     <string name="project_initiation">项目立项备案</string>
+    <string name="project_initiation_change">项目立项备案变更</string>
 
     <string name="please_input_approval_content">请输入审批内容</string>
     <string name="please_select_the_next_reviewer">请选择下一步审核人</string>
