@@ -69,6 +69,11 @@ object CustomUtils {
                 DetailProductionTaskPlanActivity().javaClass,
                 menu, id, jobId, from
             )
+            "MENU_TAX_CERTIFICATE_OUT_ADD" -> toAny(
+                activity,
+                DetailTaxCertificateActivity().javaClass,
+                menu, id, jobId, from
+            )
 
         }
     }

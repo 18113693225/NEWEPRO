@@ -148,6 +148,17 @@
                 android:value=".ui.activity.ProcessManageActivity" />
         </activity>
 
+        <!--税务外经证管理-->
+        <activity
+            android:name=".ui.activity.DetailTaxCertificateActivity"
+            android:label="@string/tax_certificate"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.ProcessManageActivity" />
+        </activity>
+
     </application>
 
 </manifest>

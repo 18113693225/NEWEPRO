@@ -174,5 +174,14 @@ interface ApiService {
         @Query("menuCode") menuCode: String
     ): Observable<DetailProductionTaskPlanBean>
 
+    /**
+     * 税务外经证管理
+     */
+    @GET("app/v1/getApprovalReferenceInfo")
+    fun getTaxCertificateData(
+        @Query("recordId") recordId: String,
+        @Query("menuCode") menuCode: String
+    ): Observable<DetailTaxCertificateBean>
+
 
 }
