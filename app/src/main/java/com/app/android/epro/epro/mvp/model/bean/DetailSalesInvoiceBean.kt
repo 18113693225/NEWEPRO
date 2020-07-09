@@ -30,10 +30,10 @@ data class DetailSalesInvoiceBean(
             val applicationHaveMoney: BigDecimal,//已收款金额
             val applicationHaveInvoiced: BigDecimal,//已开票金额
             val applicationSurplusInvoiced: BigDecimal,//可开票金额
-            val applicationThisInvoiced: Double,
-            val applicationTaxInvoiced: Double,
+            val applicationThisInvoiced: BigDecimal,//本次开票金额
+            val applicationTaxInvoiced: BigDecimal,//税额
             val applicationQueryInvoiced: Any,
-            val applicationUpperInvoiced: String,
+            val applicationUpperInvoiced: String,//本次开票金额大写
             val applicationInvoiceType: String,//发票类型:1增值税专用发票，2增值税普通发票
             val applicationUserId: String,
             val applicationUserName: String,//申请人名称
@@ -49,7 +49,7 @@ data class DetailSalesInvoiceBean(
             val applicationSaleAddress: String,//销售方地址
             val applicationSaleBank: String,//销售方开户行及账号
             val approvalId: String,
-            val approvalState: String,
+            val approvalState: String,//审核状态（0默认状态，1待审核，2审核中，3已审批，4未通过，5退回，6已撤回，7已取消）
             val cancelState: String,
             val cancelRefenceId: Any,
             val createUserPhone: String,
@@ -67,7 +67,7 @@ data class DetailSalesInvoiceBean(
                 val detailsContent: String,//货物或者商品名称
                 val detailsSpecification: String,//规格
                 val detailsUnit: String,//单位
-                val detailsNum: Int,//数量
+                val detailsNum: Double,//数量
                 val detailsPrice: BigDecimal,//单价（含税）
                 val detailsMoney: BigDecimal,//金额（含税)
                 val detailsTaxRate: String,//税率

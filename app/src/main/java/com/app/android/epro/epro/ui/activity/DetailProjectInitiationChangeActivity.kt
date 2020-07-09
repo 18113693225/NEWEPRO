@@ -14,7 +14,7 @@ import com.app.android.epro.epro.mvp.model.bean.DetailProjectInitiationBean
 import com.app.android.epro.epro.mvp.model.bean.ProcessBean
 import com.app.android.epro.epro.mvp.model.bean.SendApprovalInfo
 import com.app.android.epro.epro.mvp.presenter.ProcessInfoPresenter
-import com.app.android.epro.epro.ui.adapter.DetailsProjectInitiationAdapter
+import com.app.android.epro.epro.ui.adapter.DetailProjectInitiationAdapter
 import com.app.android.epro.epro.ui.fragment.InfoBottomFragment
 import com.app.android.epro.epro.utils.CustomUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -32,7 +32,7 @@ class DetailProjectInitiationChangeActivity : BaseDetailActivity(), ProcessInfoC
     private lateinit var menu: String
     private lateinit var jobId: String
     private var from: String = "-1"
-    private var mAdapter: DetailsProjectInitiationAdapter? = null
+    private var mAdapter: DetailProjectInitiationAdapter? = null
     private val mPresenter by lazy { ProcessInfoPresenter() }
 
 
@@ -290,7 +290,7 @@ class DetailProjectInitiationChangeActivity : BaseDetailActivity(), ProcessInfoC
         } else {
             list_ll.isVisible = true
             mAdapter =
-                DetailsProjectInitiationAdapter(info.keepOnStaffList as MutableList<DetailProjectInitiationBean.Data.Object.KeepOnStaff>)
+                DetailProjectInitiationAdapter(info.keepOnStaffList as MutableList<DetailProjectInitiationBean.Data.Object.KeepOnStaff>)
             mAdapter!!.setAnimationWithDefault(BaseQuickAdapter.AnimationType.SlideInLeft)
             list.adapter = mAdapter
         }

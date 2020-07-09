@@ -36,6 +36,9 @@ class ProcessInfoModel {
             "MENU_APPLICATION_FORM_ADD" -> RetrofitManager.service.getSalesInvoiceData(
                 recordId, menuCode
             ).compose(SchedulerUtils.ioToMain())
+            "MENU_TASKPANNLING_ADD" -> RetrofitManager.service.getProductionTaskData(
+                recordId, menuCode
+            ).compose(SchedulerUtils.ioToMain())
 
 
             else -> RetrofitManager.service.getDetailCarRepairData(recordId, menuCode)

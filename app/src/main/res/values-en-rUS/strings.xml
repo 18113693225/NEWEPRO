@@ -56,7 +56,7 @@
     <string name="project_initiation">Project initiation and filing</string>
     <string name="project_initiation_change">Project initiation and filing change</string>
     <string name="sales_invoice_application">Sales invoice application</string>
-
+    <string name="production_task_plan">Production task plan</string>
 
     <string name="please_input_approval_content">please input approval content</string>
     <string name="please_select_the_next_reviewer">please select the next reviewer</string>

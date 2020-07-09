@@ -128,8 +128,19 @@
 
         <!--销售开票申请-->
         <activity
-            android:name=".ui.activity.DetailsSaleInvoiceActivity"
+            android:name=".ui.activity.DetailSaleInvoiceActivity"
             android:label="@string/sales_invoice_application"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.ProcessManageActivity" />
+        </activity>
+
+        <!--生产任务计划单-->
+        <activity
+            android:name=".ui.activity.DetailProductionTaskPlanActivity"
+            android:label="@string/production_task_plan"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <meta-data

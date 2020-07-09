@@ -13,19 +13,19 @@ import com.app.android.epro.epro.mvp.model.bean.DetailSalesInvoiceBean
 import com.app.android.epro.epro.mvp.model.bean.ProcessBean
 import com.app.android.epro.epro.mvp.model.bean.SendApprovalInfo
 import com.app.android.epro.epro.mvp.presenter.ProcessInfoPresenter
-import com.app.android.epro.epro.ui.adapter.DetailsProjectInitiationAdapter
+import com.app.android.epro.epro.ui.adapter.DetailSaleInvoiceAdapter1
+import com.app.android.epro.epro.ui.adapter.DetailSaleInvoiceAdapter2
 import com.app.android.epro.epro.ui.fragment.InfoBottomFragment
 import com.app.android.epro.epro.utils.CustomUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
 import es.dmoral.toasty.Toasty
-import kotlinx.android.synthetic.main.detail_project_initiation.*
 import kotlinx.android.synthetic.main.detail_project_initiation.list
 import kotlinx.android.synthetic.main.detail_sales_invoice.*
 import kotlinx.android.synthetic.main.include_detail_bar.*
 import kotlinx.android.synthetic.main.include_detail_top.*
 import org.greenrobot.eventbus.EventBus
 
-class DetailsSaleInvoiceActivity : BaseDetailActivity(), ProcessInfoContract.View,
+class DetailSaleInvoiceActivity : BaseDetailActivity(), ProcessInfoContract.View,
     InfoBottomFragment.RefreshActivity {
 
     private lateinit var info: DetailSalesInvoiceBean
@@ -33,7 +33,9 @@ class DetailsSaleInvoiceActivity : BaseDetailActivity(), ProcessInfoContract.Vie
     private lateinit var menu: String
     private lateinit var jobId: String
     private var from: String = "-1"
-    private var mAdapter: DetailsProjectInitiationAdapter? = null
+    private var mAdapter1: DetailSaleInvoiceAdapter1? = null
+    private var mAdapter2: DetailSaleInvoiceAdapter2? = null
+
     private val mPresenter by lazy { ProcessInfoPresenter() }
 
 
@@ -105,9 +107,19 @@ class DetailsSaleInvoiceActivity : BaseDetailActivity(), ProcessInfoContract.Vie
                 return false
             }
         }
+        val linearLayoutManager2: LinearLayoutManager = object : LinearLayoutManager(this) {
+            override fun canScrollVertically(): Boolean {
+                return false
+            }
+        }
+
         list!!.isFocusable = false
         list!!.setHasFixedSize(true)
         list!!.layoutManager = linearLayoutManager1
+
+        list3!!.isFocusable = false
+        list3!!.setHasFixedSize(true)
+        list3!!.layoutManager = linearLayoutManager2
 
     }
 
@@ -163,7 +175,12 @@ class DetailsSaleInvoiceActivity : BaseDetailActivity(), ProcessInfoContract.Vie
         info = data as DetailSalesInvoiceBean
         when (info.code) {
             0 -> {
-                setView(info.data.`object`)
+                setView(
+                    info.data.`object`,
+                    info.data.invoicedTotalList,
+                    info.data.thisInvoicedTotal.toString(),
+                    info.data.taxInvoicedTotal.toString()
+                )
                 EventBus.getDefault().post(info.data.dataApproval)
             }
             else -> {
@@ -187,7 +204,13 @@ class DetailsSaleInvoiceActivity : BaseDetailActivity(), ProcessInfoContract.Vie
 
 
     @SuppressLint("SetTextI18n")
-    private fun setView(info: DetailSalesInvoiceBean.Data.Object) {
+    private fun setView(
+        info: DetailSalesInvoiceBean.Data.Object,
+        totalList: List<DetailSalesInvoiceBean.Data.Object>,
+        thisInvoiced: String,
+        taxInvoiced: String
+
+    ) {
         userName.text = info.createUserName
         phone.text = info.createUserPhone
         orgName.text = info.orgName
@@ -267,6 +290,31 @@ class DetailsSaleInvoiceActivity : BaseDetailActivity(), ProcessInfoContract.Vie
         applicationSaleAddress.text =
             if (info.applicationSaleAddress.isEmpty()) CustomUtils.emptyInfo else info.applicationSaleAddress
 
+
+        if (info.formDetailsList.isNullOrEmpty()) {
+            list_ll.isVisible = false
+        } else {
+            list_ll.isVisible = true
+            applicationThisInvoiced.text = info.applicationThisInvoiced.toString()
+            applicationUpperInvoiced.text = info.applicationUpperInvoiced
+            applicationTaxInvoiced.text = info.applicationTaxInvoiced.toString()
+            mAdapter1 =
+                DetailSaleInvoiceAdapter1(info.formDetailsList as MutableList<DetailSalesInvoiceBean.Data.Object.FormDetails>)
+            mAdapter1!!.setAnimationWithDefault(BaseQuickAdapter.AnimationType.SlideInLeft)
+            list.adapter = mAdapter1
+        }
+
+        if (totalList.isNullOrEmpty()) {
+            list3_ll.isVisible = false
+        } else {
+            list3_ll.isVisible = true
+            thisInvoicedTotal.text = thisInvoiced
+            taxInvoicedTotal.text = taxInvoiced
+            mAdapter2 =
+                DetailSaleInvoiceAdapter2(totalList as MutableList<DetailSalesInvoiceBean.Data.Object>)
+            mAdapter2!!.setAnimationWithDefault(BaseQuickAdapter.AnimationType.SlideInLeft)
+            list3.adapter = mAdapter2
+        }
 
     }
 

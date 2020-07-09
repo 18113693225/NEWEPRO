@@ -6,7 +6,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 
 
-class DetailsProjectInitiationAdapter(data: MutableList<DetailProjectInitiationBean.Data.Object.KeepOnStaff>) :
+class DetailProjectInitiationAdapter(data: MutableList<DetailProjectInitiationBean.Data.Object.KeepOnStaff>) :
     BaseQuickAdapter<DetailProjectInitiationBean.Data.Object.KeepOnStaff, BaseViewHolder>(
         R.layout.item_project_initiation_list, data
     ) {

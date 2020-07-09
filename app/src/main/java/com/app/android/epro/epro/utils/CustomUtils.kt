@@ -61,7 +61,12 @@ object CustomUtils {
             )
             "MENU_APPLICATION_FORM_ADD" -> toAny(
                 activity,
-                DetailsSaleInvoiceActivity().javaClass,
+                DetailSaleInvoiceActivity().javaClass,
+                menu, id, jobId, from
+            )
+            "MENU_TASKPANNLING_ADD" -> toAny(
+                activity,
+                DetailProductionTaskPlanActivity().javaClass,
                 menu, id, jobId, from
             )
 

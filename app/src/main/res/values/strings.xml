@@ -58,6 +58,7 @@
     <string name="project_initiation">项目立项备案</string>
     <string name="project_initiation_change">项目立项备案变更</string>
     <string name="sales_invoice_application">销售开票申请</string>
+    <string name="production_task_plan">生产任务计划单</string>
 
     <string name="please_input_approval_content">请输入审批内容</string>
     <string name="please_select_the_next_reviewer">请选择下一步审核人</string>
