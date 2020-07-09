@@ -42,6 +42,9 @@ class ProcessInfoModel {
             "MENU_TAX_CERTIFICATE_OUT_ADD" -> RetrofitManager.service.getTaxCertificateData(
                 recordId, menuCode
             ).compose(SchedulerUtils.ioToMain())
+            "MENU_TAX_CERTIFICATE_BACK_ADD" -> RetrofitManager.service.getTaxCertificateBackData(
+                recordId, menuCode
+            ).compose(SchedulerUtils.ioToMain())
 
 
             else -> RetrofitManager.service.getDetailCarRepairData(recordId, menuCode)

@@ -67,4 +67,5 @@
     <string name="Initiating_post">Initiating post:</string>
     <string name="Unit_name">Unit name:</string>
     <string name="Department_name">Department name:</string>
+    <string name="tax_certificate_back">Tax certificate back</string>
 </resources>

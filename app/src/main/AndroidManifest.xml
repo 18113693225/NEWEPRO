@@ -159,6 +159,17 @@
                 android:value=".ui.activity.ProcessManageActivity" />
         </activity>
 
+        <!--税务外经证退还-->
+        <activity
+            android:name=".ui.activity.DetailTaxCertificateBackActivity"
+            android:label="@string/tax_certificate_back"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.ProcessManageActivity" />
+        </activity>
+
     </application>
 
 </manifest>

@@ -74,6 +74,11 @@ object CustomUtils {
                 DetailTaxCertificateActivity().javaClass,
                 menu, id, jobId, from
             )
+            "MENU_TAX_CERTIFICATE_BACK_ADD" -> toAny(
+                activity,
+                DetailTaxCertificateBackActivity().javaClass,
+                menu, id, jobId, from
+            )
 
         }
     }

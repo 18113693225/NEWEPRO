@@ -183,5 +183,14 @@ interface ApiService {
         @Query("menuCode") menuCode: String
     ): Observable<DetailTaxCertificateBean>
 
+    /**
+     * 税务外经证退还
+     */
+    @GET("app/v1/getApprovalReferenceInfo")
+    fun getTaxCertificateBackData(
+        @Query("recordId") recordId: String,
+        @Query("menuCode") menuCode: String
+    ): Observable<DetailTaxCertificateBackBean>
+
 
 }
