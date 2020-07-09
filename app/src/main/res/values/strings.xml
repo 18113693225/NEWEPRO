@@ -69,6 +69,7 @@
     <string name="Unit_name">单位名称:</string>
     <string name="Department_name">部门名称:</string>
     <string name="tax_certificate_back">税务外经证退还</string>
+    <string name="establishment_of_project_personnel">项目人员组建</string>
 
 
 </resources>

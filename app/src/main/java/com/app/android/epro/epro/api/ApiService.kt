@@ -192,5 +192,14 @@ interface ApiService {
         @Query("menuCode") menuCode: String
     ): Observable<DetailTaxCertificateBackBean>
 
+    /**
+     * 项目人员组建
+     */
+    @GET("app/v1/getApprovalReferenceInfo")
+    fun getFormProjectPersonnelData(
+        @Query("recordId") recordId: String,
+        @Query("menuCode") menuCode: String
+    ): Observable<DetailFormProjectPersonnelBean>
+
 
 }

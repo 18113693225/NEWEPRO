@@ -79,6 +79,11 @@ object CustomUtils {
                 DetailTaxCertificateBackActivity().javaClass,
                 menu, id, jobId, from
             )
+            "MENU_ITEM_PEOPLE_BUILD_ADD" -> toAny(
+                activity,
+                DetailFormProjectPersonnelActivity().javaClass,
+                menu, id, jobId, from
+            )
 
         }
     }
