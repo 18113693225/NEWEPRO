@@ -51,6 +51,9 @@ class ProcessInfoModel {
             "MENU_ITEM_PEOPLE_DISPATCH_ADD" -> RetrofitManager.service.getProjectPersonnelSchedulerData(
                 recordId, menuCode
             ).compose(SchedulerUtils.ioToMain())
+            "MENU_WORKER_RECORD_BUILD_ADD" -> RetrofitManager.service.getFormProjectLaborPersonnelData(
+                recordId, menuCode
+            ).compose(SchedulerUtils.ioToMain())
 
 
             else -> RetrofitManager.service.getDetailCarRepairData(recordId, menuCode)

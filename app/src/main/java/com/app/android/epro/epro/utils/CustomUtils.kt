@@ -7,6 +7,8 @@ import android.content.Intent
 import com.afollestad.materialdialogs.MaterialDialog
 import com.app.android.epro.epro.R
 import com.app.android.epro.epro.ui.activity.*
+import com.bumptech.glide.load.model.GlideUrl
+import com.bumptech.glide.load.model.LazyHeaders
 import com.google.gson.Gson
 import es.dmoral.toasty.Toasty
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -89,6 +91,11 @@ object CustomUtils {
                 DetailProjectPersonnelSchedulerActivity().javaClass,
                 menu, id, jobId, from
             )
+            "MENU_WORKER_RECORD_BUILD_ADD" -> toAny(
+                activity,
+                DetailFormProjectLaborPersonnelActivity().javaClass,
+                menu, id, jobId, from
+            )
 
         }
     }
@@ -140,6 +147,18 @@ object CustomUtils {
         val intent = Intent(activity, ProcessManageActivity::class.java)
         activity.startActivity(intent)
         activity.overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out)
+    }
+
+
+    fun getTokenGlideUrl(url: String): GlideUrl {
+        val token: String by Preference("token", "")
+        return GlideUrl(
+            url, LazyHeaders.Builder()
+                .addHeader(
+                    "token", token
+                )
+                .build()
+        )
     }
 
     /**

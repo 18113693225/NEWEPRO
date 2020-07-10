@@ -71,6 +71,7 @@
     <string name="tax_certificate_back">税务外经证退还</string>
     <string name="establishment_of_project_personnel">项目人员组建</string>
     <string name="project_personnel_scheduling">项目人员调度</string>
+    <string name="establishment_of_project_labor_personnel">项目劳务人员组建</string>
 
 
 </resources>

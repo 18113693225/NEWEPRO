@@ -192,6 +192,17 @@
                 android:value=".ui.activity.ProcessManageActivity" />
         </activity>
 
+        <!--项目劳务人员组建-->
+        <activity
+            android:name=".ui.activity.DetailFormProjectLaborPersonnelActivity"
+            android:label="@string/establishment_of_project_labor_personnel"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.ProcessManageActivity" />
+        </activity>
+
     </application>
 
 </manifest>
