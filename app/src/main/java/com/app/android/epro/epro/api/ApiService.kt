@@ -201,5 +201,14 @@ interface ApiService {
         @Query("menuCode") menuCode: String
     ): Observable<DetailFormProjectPersonnelBean>
 
+    /**
+     * 项目人员调度
+     */
+    @GET("app/v1/getApprovalReferenceInfo")
+    fun getProjectPersonnelSchedulerData(
+        @Query("recordId") recordId: String,
+        @Query("menuCode") menuCode: String
+    ): Observable<DetailProjectPersonnelSchedulerBean>
+
 
 }

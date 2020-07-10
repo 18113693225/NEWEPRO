@@ -181,6 +181,17 @@
                 android:value=".ui.activity.ProcessManageActivity" />
         </activity>
 
+        <!--项目人员调度-->
+        <activity
+            android:name=".ui.activity.DetailProjectPersonnelSchedulerActivity"
+            android:label="@string/project_personnel_scheduling"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.ProcessManageActivity" />
+        </activity>
+
     </application>
 
 </manifest>

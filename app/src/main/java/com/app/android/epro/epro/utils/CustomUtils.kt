@@ -84,6 +84,11 @@ object CustomUtils {
                 DetailFormProjectPersonnelActivity().javaClass,
                 menu, id, jobId, from
             )
+            "MENU_ITEM_PEOPLE_DISPATCH_ADD" -> toAny(
+                activity,
+                DetailProjectPersonnelSchedulerActivity().javaClass,
+                menu, id, jobId, from
+            )
 
         }
     }
