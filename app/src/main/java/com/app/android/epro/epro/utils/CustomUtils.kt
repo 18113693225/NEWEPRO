@@ -101,6 +101,11 @@ object CustomUtils {
                 DetailDraftingOfContractActivity().javaClass,
                 menu, id, jobId, from
             )
+            "MENU_SALES_CONTRACT_DRAFT_UPD" -> toAny(
+                activity,
+                DetailDraftingOfContractChangeActivity().javaClass,
+                menu, id, jobId, from
+            )
 
         }
     }

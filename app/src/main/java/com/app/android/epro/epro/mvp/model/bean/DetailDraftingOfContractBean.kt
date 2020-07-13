@@ -52,6 +52,11 @@ data class DetailDraftingOfContractBean(
             val contractAsType: String,//是否关联投标报价（1是）
             val contractTenderPrice: BigDecimal,//投标报价金额
             val contractAdvanceCharge: BigDecimal,//合同预付款
+            val changeMoney: BigDecimal,//变更金额（正负数）
+            val changeMoneyCapital: String,//变更金额(大写)
+            val changeNotice: String,//变更备注
+            val contractFinalMoneyBeforeChange: BigDecimal, //变更前合同金额
+            val contractMoneyCapitalBeforeChange: String,  //变更前合同金额（大写）
             val contractOriginalMoney: BigDecimal,//合同起始金额
             val contractFinalMoney: BigDecimal,//合同最终金额
             val contractMoneyCapital: String,//合同最终金额(大写)

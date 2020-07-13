@@ -73,6 +73,7 @@
     <string name="project_personnel_scheduling">项目人员调度</string>
     <string name="establishment_of_project_labor_personnel">项目劳务人员组建</string>
     <string name="drafting_of_sales_contract">销售合同起草</string>
+    <string name="drafting_of_sales_contract_change">销售合同起草变更</string>
 
 
 </resources>

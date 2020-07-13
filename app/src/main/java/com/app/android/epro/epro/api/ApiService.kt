@@ -220,7 +220,7 @@ interface ApiService {
     ): Observable<DetailFormProjectLaborPersonnelBean>
 
     /**
-     * 销售合同起草
+     * 销售合同起草(变更)
      */
     @GET("app/v1/getApprovalReferenceInfo")
     fun getDraftingOfContractData(
