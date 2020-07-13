@@ -203,6 +203,17 @@
                 android:value=".ui.activity.ProcessManageActivity" />
         </activity>
 
+        <!--销售合同起草-->
+        <activity
+            android:name=".ui.activity.DetailDraftingOfContractActivity"
+            android:label="@string/drafting_of_sales_contract"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.ProcessManageActivity" />
+        </activity>
+
     </application>
 
 </manifest>

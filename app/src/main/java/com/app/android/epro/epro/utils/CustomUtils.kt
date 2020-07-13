@@ -96,6 +96,11 @@ object CustomUtils {
                 DetailFormProjectLaborPersonnelActivity().javaClass,
                 menu, id, jobId, from
             )
+            "MENU_SALES_CONTRACT_DRAFT_ADD" -> toAny(
+                activity,
+                DetailDraftingOfContractActivity().javaClass,
+                menu, id, jobId, from
+            )
 
         }
     }
