@@ -225,6 +225,17 @@
                 android:value=".ui.activity.ProcessManageActivity" />
         </activity>
 
+        <!--项目劳务人员扣款-->
+        <activity
+            android:name=".ui.activity.DetailDeductionOfLaborPersonnelActivity"
+            android:label="@string/deduction_of_project_labor_personnel"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.ProcessManageActivity" />
+        </activity>
+
     </application>
 
 </manifest>
