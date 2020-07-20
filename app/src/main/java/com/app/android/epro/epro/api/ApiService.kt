@@ -228,4 +228,14 @@ interface ApiService {
         @Query("menuCode") menuCode: String
     ): Observable<DetailDraftingOfContractBean>
 
+
+    /**
+     * 销售合同起草(变更)
+     */
+    @GET("app/v1/getApprovalReferenceInfo")
+    fun getDeductionOfLaborPersonnelData(
+        @Query("recordId") recordId: String,
+        @Query("menuCode") menuCode: String
+    ): Observable<DetailDeductionOfLaborPersonnelBean>
+
 }

@@ -106,6 +106,11 @@ object CustomUtils {
                 DetailDraftingOfContractChangeActivity().javaClass,
                 menu, id, jobId, from
             )
+            "MENU_WORKER_DEDUCT_ADD" -> toAny(
+                activity,
+                DetailDeductionOfLaborPersonnelActivity().javaClass,
+                menu, id, jobId, from
+            )
 
         }
     }
