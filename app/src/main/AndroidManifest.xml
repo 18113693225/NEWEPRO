@@ -21,13 +21,14 @@
 
     <application
         android:name=".MyApplication"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_app"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tool:ignore="LockedOrientationActivity">
+        tool:ignore="LockedOrientationActivity"
+        tool:replace="android:allowBackup">
 
 
         <activity
